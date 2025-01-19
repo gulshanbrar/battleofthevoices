@@ -54,10 +54,10 @@ export default function Page() {
           >
             <div className="space-y-3">
               <h2 className="text-4xl font-extrabold text-yellow-300 drop-shadow-[0_0_10px_rgba(255,255,0,0.8)] animate-glitch">
-                {event.date}
+                {event.artist}
               </h2>
               <p className="text-xl text-cyan-300 font-medium drop-shadow-[0_0_10px_rgba(0,255,255,0.8)]">
-                {event.location}
+                {event.track}
               </p>
               <motion.p
                 className="text-3xl text-pink-300 font-bold animate-glitch drop-shadow-[0_0_10px_rgba(255,0,255,0.8)]"

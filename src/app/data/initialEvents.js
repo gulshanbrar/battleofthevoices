@@ -1,22 +1,14 @@
 const initialEvents = [
-  {
-    date: "Jul 24, 2015",
-    location: "Borgata Hotel Casino & Spa - Music Box",
-    rating: 0,
-  },
-  { date: "Aug 30, 2015", location: "Theater of Living Arts", rating: 0 },
-  { date: "Aug 31, 2015", location: "Hersheypark Stadium", rating: 0 },
-  {
-    date: "Sep 5, 2015",
-    location: "L'Auberge Casino & Hotel Baton Rouge",
-    rating: 0,
-  },
-  { date: "Sep 6, 2015", location: "Riverbend Music Center", rating: 0 },
-  { date: "Sep 7, 2015", location: "Loufest", rating: 0 },
-  { date: "Sep 8, 2015", location: "Lincoln Hall", rating: 0 },
-  { date: "Sep 10, 2015", location: "The Orange Peel", rating: 0 },
-  { date: "Sep 11, 2015", location: "JEFFERSON THEATER", rating: 0 },
-  { date: "Sep 12, 2015", location: "SINGLETARY CENTER", rating: 0 },
+  { id: 1, artist: "MIS SCHEMA", track: "SCANDALOSA", rating: 0 },
+  { id: 2, artist: "DREAMY GECKOS", track: "EVIL SPIRIT", rating: 0 },
+  { id: 3, artist: "MAESTRO E MELETTA", track: "IN THE SKY", rating: 0 },
+  { id: 4, artist: "LEGNO JOE", track: "TO BLOOD AND ASHES", rating: 0 },
+  { id: 5, artist: "TWENTY ONE GUN", track: "THE THREAD", rating: 0 },
+  { id: 6, artist: "THE DAMAGES", track: "FAREWELL", rating: 0 },
+  { id: 7, artist: "TURQUOISE", track: "JENNIE KIM", rating: 0 },
+  { id: 8, artist: "JOHN DOE", track: "JOHN DOE", rating: 0 },
+  { id: 9, artist: "RAINING GUNS", track: "OPEN ARMS", rating: 0 },
+  { id: 10, artist: "CHINA DOLLS", track: "CERAMIC HEART", rating: 0 },
 ];
 
 export default initialEvents;

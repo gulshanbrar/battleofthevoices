@@ -48,8 +48,7 @@ export default function VaporwaveForm() {
           <br />
           <br />
           <strong>Accettazione</strong>
-          <br />
-          Partecipando, accetti il regolamento e possibili modifiche.
+          <br />- Partecipando, accetti il regolamento e possibili modifiche.
         </p>
         <form className="max-w-3xl mx-auto">
           <div className="mb-6">
@@ -68,7 +67,7 @@ export default function VaporwaveForm() {
               placeholder="Inserisci la tua email"
             />
           </div>
-          <div className="mb-8">
+          <div className="mb-6">
             <label className="block text-pink-200 mb-2 text-lg">
               Titolo Canzone
             </label>
@@ -76,6 +75,16 @@ export default function VaporwaveForm() {
               type="text"
               className="w-full px-5 py-3 bg-purple-800 text-white border border-pink-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
               placeholder="Inserisci il titolo della canzone"
+            />
+          </div>
+          <div className="mb-8">
+            <label className="block text-pink-200 mb-2 text-lg">
+              Carica il tuo brano
+            </label>
+            <input
+              type="file"
+              className="w-full px-5 py-3 bg-purple-800 text-white border border-pink-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
+              accept="audio/mp3, audio/wav"
             />
           </div>
           <button

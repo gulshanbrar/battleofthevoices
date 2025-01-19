@@ -96,11 +96,11 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <Link href="/quinte">
+            <Link href="/contest">
               <HeroButton1 label={"Scopri i partecipanti"} />
             </Link>
 
-            <Link href="/live">
+            <Link href="/vota">
               <HeroButton2 label={"Partecipa al live event"} />
             </Link>
           </motion.div>

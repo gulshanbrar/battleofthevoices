@@ -10,7 +10,7 @@ export default function Page() {
     {
       title: "Come tutto è iniziato",
       description:
-        "Music for the Future nasce dal desiderio di creare un'opportunità unica per i giovani talenti musicali di esprimersi e farsi conoscere. L'obiettivo principale è quello di offrire una piattaforma dove i cantautori tra i 18 e i 25 anni possano caricare le loro canzoni, essere ascoltati e votati da un pubblico appassionato e qualificato.",
+        "Battle of the voices nasce dal desiderio di creare un'opportunità unica per i giovani talenti musicali di esprimersi e farsi conoscere. L'obiettivo principale è quello di offrire una piattaforma dove i cantautori tra i 18 e i 25 anni possano caricare le loro canzoni, essere ascoltati e votati da un pubblico appassionato e qualificato.",
       icon: Sunset,
     },
     {
@@ -22,13 +22,13 @@ export default function Page() {
     {
       title: "La nostra missione",
       description:
-        "Crediamo che la musica sia un linguaggio universale capace di connettere le persone e di ispirare nuove generazioni. Con Music for the Future, vogliamo coltivare la creatività dei giovani artisti, offrendo loro strumenti concreti per costruire il proprio futuro musicale.",
+        "Crediamo che la musica sia un linguaggio universale capace di connettere le persone e di ispirare nuove generazioni. Con Battle of the voices, vogliamo coltivare la creatività dei giovani artisti, offrendo loro strumenti concreti per costruire il proprio futuro musicale.",
       icon: Target,
     },
     {
       title: "Unisciti a noi",
       description:
-        "Che tu sia un giovane musicista, un appassionato di musica, o semplicemente qualcuno che desidera supportare i talenti emergenti, Music for the Future ti invita a far parte di questa avventura unica. Scopri, ascolta e vota i tuoi preferiti: insieme possiamo plasmare il futuro della musica!",
+        "Che tu sia un giovane musicista, un appassionato di musica, o semplicemente qualcuno che desidera supportare i talenti emergenti, Battle of the voices ti invita a far parte di questa avventura unica. Scopri, ascolta e vota i tuoi preferiti: insieme possiamo plasmare il futuro della musica!",
       icon: BicepsFlexed,
     },
   ];
