@@ -59,9 +59,21 @@ export default function NavBar() {
           </Link>
         </div>
 
-        {/* Social links (allineati a destra senza uscire dal container) */}
-        <div className="hidden md:flex justify-end">
+        {/* Social links and user actions (aligned to the right) */}
+        <div className="hidden md:flex justify-end items-center space-x-4">
           <Social />
+          <Link
+            href="/login"
+            className="text-cyan-300 hover:text-pink-400 bg-purple-900/40 px-4 py-2 rounded-md border border-pink-500/50 transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,0,255,0.3)] font-bold"
+          >
+            Login
+          </Link>
+          <Link
+            href="/register"
+            className="text-cyan-300 hover:text-pink-400 bg-purple-900/40 px-4 py-2 rounded-md border border-pink-500/50 transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,0,255,0.3)] font-bold"
+          >
+            Registrati
+          </Link>
         </div>
       </div>
     </nav>

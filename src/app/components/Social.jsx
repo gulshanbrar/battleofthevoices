@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaInstagram, FaFacebookF, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaSpotify } from "react-icons/fa";
 
 export default function Social() {
   const socialLinks = [
@@ -9,11 +9,10 @@ export default function Social() {
       logo: FaInstagram,
     },
     {
-      name: "Facebook",
-      url: "https://www.facebook.com/Battle-of-the-Voices-102124515365424",
-      logo: FaFacebookF,
+      name: "Spotify",
+      url: "https://open.spotify.com/playlist/4RSDHlJhSHBWkxcUDyYnTR?si=bb89891a154d43bc&pt=85bdfa5be97df60b89efd6181be20314",
+      logo: FaSpotify,
     },
-    { name: "X", url: "https://twitter.com/BattleoftheVoi1", logo: FaTwitter },
   ];
 
   return (

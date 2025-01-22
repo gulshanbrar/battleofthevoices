@@ -7,13 +7,21 @@ import initialEvents from "../data/initialEvents";
 
 export default function Page() {
   const [events, setEvents] = useState(initialEvents);
+  const [votedIndex, setVotedIndex] = useState(null);
 
   const handleVote = (index) => {
-    setEvents((prevEvents) =>
-      prevEvents.map((event, i) =>
-        i === index ? { ...event, rating: event.rating + 1 } : event
-      )
-    );
+    setEvents((prevEvents) => {
+      const updatedEvents = prevEvents.map((event, i) => {
+        if (i === index) {
+          return { ...event, rating: event.rating + 1 };
+        } else if (i === votedIndex) {
+          return { ...event, rating: event.rating - 1 };
+        }
+        return event;
+      });
+      return updatedEvents;
+    });
+    setVotedIndex(index);
   };
 
   return (
@@ -70,14 +78,17 @@ export default function Page() {
             </div>
             <motion.button
               onClick={() => handleVote(index)}
-              className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-white text-lg font-extrabold rounded-full hover:from-pink-500 hover:to-yellow-400 transition-all duration-300 shadow-[0_0_15px_rgba(255,0,255,0.7)] border border-white/30 hover:scale-110"
+              className={`px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-white text-lg font-extrabold rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(255,0,255,0.7)] border border-white/30 hover:scale-110 ${
+                votedIndex === index ? "opacity-70" : "hover:from-pink-500 hover:to-yellow-400"
+              }`}
               whileTap={{ scale: 0.9 }}
               whileHover={{
                 scale: 1.1,
                 boxShadow: "0 0 20px rgba(255, 0, 255, 1)",
               }}
+              disabled={votedIndex === index}
             >
-              ⚡ Vota Ora
+              ⚡ {votedIndex === index ? "Hai Votato" : "Vota Ora"}
             </motion.button>
           </motion.div>
         ))}
