@@ -1,0 +1,87 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.example.dashboard.model.Task" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Elenco Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #fff;
+        }
+        tr:nth-child(odd) {
+            background-color: #fdfdfd;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Elenco Task</h1>
+    
+    <!-- Link per aggiungere un nuovo task (il form per l'inserimento potrebbe essere in un'altra JSP o in una sezione della stessa pagina) -->
+    <p>
+      <a href="${pageContext.request.contextPath}/tasks?action=add">Aggiungi Nuovo Task</a>
+    </p>
+    
+    <!-- Tabella che mostra l'elenco dei task -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titolo</th>
+                <th>Descrizione</th>
+                <th>Data</th>
+                <th>Priorità</th>
+                <th>Stato</th>
+                <th>Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach var="task" items="${tasks}">
+                <tr>
+                    <td>${task.id}</td>
+                    <td>${task.title}</td>
+                    <td>${task.description}</td>
+                    <td>${task.date}</td>
+                    <td>${task.priority}</td>
+                    <td>${task.status}</td>
+                    <td>
+                        <!-- Collegamenti per la modifica ed eliminazione: -->
+                        <a href="${pageContext.request.contextPath}/tasks?action=edit&id=${task.id}">Modifica</a>
+                        |
+                        <a href="${pageContext.request.contextPath}/tasks?action=delete&id=${task.id}" onclick="return confirm('Sei sicuro di voler eliminare questo task?');">Elimina</a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+</body>
+</html>

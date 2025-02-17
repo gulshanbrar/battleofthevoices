@@ -7,21 +7,14 @@ import initialEvents from "../data/initialEvents";
 
 export default function Page() {
   const [events, setEvents] = useState(initialEvents);
-  const [votedIndex, setVotedIndex] = useState(null);
+  const [showPopup, setShowPopup] = useState(false); // Stato per il popup
 
-  const handleVote = (index) => {
-    setEvents((prevEvents) => {
-      const updatedEvents = prevEvents.map((event, i) => {
-        if (i === index) {
-          return { ...event, rating: event.rating + 1 };
-        } else if (i === votedIndex) {
-          return { ...event, rating: event.rating - 1 };
-        }
-        return event;
-      });
-      return updatedEvents;
-    });
-    setVotedIndex(index);
+  const handleVote = () => {
+    setShowPopup(true); // Mostra il popup
+  };
+
+  const closePopup = () => {
+    setShowPopup(false); // Chiudi il popup
   };
 
   return (
@@ -77,22 +70,56 @@ export default function Page() {
               </motion.p>
             </div>
             <motion.button
-              onClick={() => handleVote(index)}
-              className={`px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-white text-lg font-extrabold rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(255,0,255,0.7)] border border-white/30 hover:scale-110 ${
-                votedIndex === index ? "opacity-70" : "hover:from-pink-500 hover:to-yellow-400"
-              }`}
+              onClick={handleVote} // Mostra il popup al click
+              className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-white text-lg font-extrabold rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(255,0,255,0.7)] border border-white/30 hover:scale-110 hover:from-pink-500 hover:to-yellow-400"
               whileTap={{ scale: 0.9 }}
               whileHover={{
                 scale: 1.1,
                 boxShadow: "0 0 20px rgba(255, 0, 255, 1)",
               }}
-              disabled={votedIndex === index}
             >
-              ⚡ {votedIndex === index ? "Hai Votato" : "Vota Ora"}
+              ⚡ Vota Ora
             </motion.button>
           </motion.div>
         ))}
       </motion.div>
+
+      {/* Popup */}
+      {showPopup && (
+        <motion.div
+          className="fixed inset-0 flex items-center justify-center z-50 bg-black/60 backdrop-blur-sm"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            className="relative p-8 bg-gradient-to-r from-purple-900 via-pink-800 to-cyan-700 text-white rounded-2xl shadow-[0_0_50px_rgba(255,0,255,0.8)] border border-pink-500 max-w-lg w-full"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 120 }}
+          >
+            <h2 className="text-3xl font-extrabold text-yellow-300 drop-shadow-[0_0_10px_rgba(255,255,0,0.8)] text-center">
+              ⚠️ Effettua il Login
+            </h2>
+            <p className="mt-4 text-xl text-cyan-300 text-center">
+              Per votare, devi effettuare l'accesso al tuo account.
+            </p>
+            <div className="mt-6 flex justify-center space-x-4">
+              <button
+                className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-500 text-white text-lg font-bold rounded-full shadow-lg hover:from-pink-500 hover:to-yellow-400 transition-all duration-300"
+                onClick={closePopup}
+              >
+                Chiudi
+              </button>
+              <button
+                className="px-6 py-3 bg-gradient-to-r from-yellow-300 via-pink-400 to-red-500 text-purple-900 text-lg font-bold rounded-full shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                Login
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </main>
   );
 }

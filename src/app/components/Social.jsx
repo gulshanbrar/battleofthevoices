@@ -5,12 +5,12 @@ export default function Social() {
   const socialLinks = [
     {
       name: "Instagram",
-      url: "https://www.instagram.com/_battle_of_the_voices_",
+      url: "https://www.instagram.com/_battle_of_the_voices_?igsh=MWo0d3c2aWh4bHU0aQ%3D%3D&utm_source=qr",
       logo: FaInstagram,
     },
     {
       name: "Spotify",
-      url: "https://open.spotify.com/playlist/4RSDHlJhSHBWkxcUDyYnTR?si=bb89891a154d43bc&pt=85bdfa5be97df60b89efd6181be20314",
+      url: "https://open.spotify.com/playlist/4RSDHlJhSHBWkxcUDyYnTR?si=VO9X6d7LT42WOc4odrpWMw&pt=9a3ca43fe28f4587077e6d9f5f45b507",
       logo: FaSpotify,
     },
   ];
