@@ -1,4 +1,3 @@
-Below is an updated **README.md** that integrates your previous Next.js boilerplate README with the current project details:
 
 ---
 
@@ -147,4 +146,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Feel free to adjust any sections as needed to best represent your project. Enjoy building and showcasing **Battle of the Voices**!
